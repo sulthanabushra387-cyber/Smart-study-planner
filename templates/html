@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyMind AI — Your Smart Study Companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<!-- 🎨 All styles in style.css -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     ANIMATED BACKGROUND ORBS
+═══════════════════════════════════════════ -->
+<div class="bg-orbs">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════ -->
+<nav>
+  <div class="logo">StudyMind AI</div>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#planner">Planner</a></li>
+    <li><a href="#tracker">Tracker</a></li>
+    <li><a href="#tips">Tips</a></li>
+  </ul>
+  <a href="#planner" class="nav-cta">Start Free →</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-badge">
+    <span></span> AI-Powered Study Intelligence
+  </div>
+
+  <h1 class="hero-title">
+    Study <span class="highlight">Smarter</span>,<br>
+    Not <span class="highlight2">Harder</span>
+  </h1>
+
+  <p class="hero-sub">
+    Let AI craft a personalized study plan tailored to your goals, schedule, and learning style.
+    Ace every exam with confidence.
+  </p>
+
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="scrollTo('planner')">✨ Generate My Plan</button>
+    <button class="btn-ghost"   onclick="scrollTo('how')">How it Works ↓</button>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">50K+</div>
+      <div class="stat-label">Students Helped</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">92%</div>
+      <div class="stat-label">Pass Rate</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4.9★</div>
+      <div class="stat-label">Rating</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3x</div>
+      <div class="stat-label">Faster Learning</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FEATURES
+═══════════════════════════════════════════ -->
+<section id="features">
+  <div class="section-wrap">
+    <p class="section-label reveal">What We Offer</p>
+    <h2 class="section-title reveal">Everything You Need to Excel</h2>
+    <p class="section-desc reveal">Powerful tools designed to maximize your learning potential and keep you motivated every single day.</p>
+
+    <div class="features-grid">
+
+      <div class="feature-card reveal">
+        <div class="feature-icon ic-purple">🧠</div>
+        <h3>AI Study Planner</h3>
+        <p>Adaptive plans that evolve with your progress, learning pace, and upcoming exam dates.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon ic-teal">⏱️</div>
+        <h3>Pomodoro Timer</h3>
+        <p>Built-in focus timer with smart breaks to keep your brain fresh and productivity high.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon ic-orange">📊</div>
+        <h3>Progress Analytics</h3>
+        <p>Visualize your study streaks, completion rates, and subject mastery in real time.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon ic-pink">🎯</div>
+        <h3>Smart Goal Setting</h3>
+        <p>Set SMART goals and let AI break them into achievable daily milestones.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon ic-yellow">💡</div>
+        <h3>Study Tips Engine</h3>
+        <p>Personalized study techniques based on cognitive science and your learning profile.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon ic-green">🏆</div>
+        <h3>Gamified Rewards</h3>
+        <p>Earn XP, badges, and streaks that keep you motivated through the toughest study sessions.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     AI PLANNER
+═══════════════════════════════════════════ -->
+<section id="planner">
+  <div class="section-wrap">
+    <p class="section-label reveal">AI Generator</p>
+    <h2 class="section-title reveal">Build Your Study Plan</h2>
+    <p class="section-desc reveal">Tell us your subjects and goals. Our AI will craft a personalized, week-by-week study schedule just for you.</p>
+
+    <div class="planner-layout">
+
+      <!-- FORM -->
+      <div class="planner-form-wrap reveal">
+
+        <div class="form-group">
+          <label>📚 Exam / Subject Name</label>
+          <input type="text" id="subject-input" placeholder="e.g. Physics, Mathematics, History…">
+        </div>
+
+        <div class="form-group">
+          <label>📅 Exam Date</label>
+          <input type="date" id="exam-date">
+        </div>
+
+        <div class="form-group">
+          <label>⏰ Daily Study Hours</label>
+          <select id="study-hours">
+            <option value="1">1 hour / day</option>
+            <option value="2" selected>2 hours / day</option>
+            <option value="3">3 hours / day</option>
+            <option value="4">4+ hours / day</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>🎓 Difficulty Level</label>
+          <select id="difficulty">
+            <option value="easy">Easy — Light Review</option>
+            <option value="medium" selected>Medium — Balanced</option>
+            <option value="hard">Hard — Intense Prep</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>📝 Learning Style</label>
+          <div class="tag-row" id="style-tags">
+            <span class="tag active" data-val="visual">👁 Visual</span>
+            <span class="tag"        data-val="reading">📖 Reading</span>
+            <span class="tag"        data-val="practice">✍️ Practice</span>
+            <span class="tag"        data-val="audio">🎧 Audio</span>
+          </div>
+        </div>
+
+        <button id="generate-btn" onclick="generatePlan()">✨ Generate My AI Study Plan</button>
+      </div>
+
+      <!-- OUTPUT -->
+      <div>
+        <div class="plan-output reveal" id="plan-output">
+
+          <!-- Placeholder -->
+          <div class="plan-placeholder" id="plan-placeholder">
+            <div class="ph-icon">📋</div>
+            <p>Your personalized study plan will appear here after you fill in the details and click generate.</p>
+          </div>
+
+          <!-- Loading Spinner -->
+          <div class="spinner" id="spinner">
+            <div class="spin-ring"></div>
+          </div>
+
+          <!-- Generated Plan -->
+          <div class="plan-result" id="plan-result">
+            <h3 id="plan-title">Your Study Plan</h3>
+            <div class="plan-days" id="plan-days"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════════ -->
+<section id="how">
+  <div class="section-wrap">
+    <p class="section-label reveal">Process</p>
+    <h2 class="section-title reveal">How StudyMind Works</h2>
+    <p class="section-desc reveal">Four simple steps to transform your study habits and achieve your academic goals.</p>
+
+    <div class="steps-grid">
+
+      <div class="step-card reveal">
+        <div class="step-num" style="background:var(--primary)">1</div>
+        <div class="step-emoji">📝</div>
+        <h3>Enter Your Goals</h3>
+        <p>Tell us your subjects, exam dates, and how much time you can dedicate each day.</p>
+      </div>
+
+      <div class="step-card reveal">
+        <div class="step-num" style="background:var(--accent4)">2</div>
+        <div class="step-emoji">🤖</div>
+        <h3>AI Analyzes & Plans</h3>
+        <p>Our AI processes your profile and builds an optimized, adaptive study schedule.</p>
+      </div>
+
+      <div class="step-card reveal">
+        <div class="step-num" style="background:var(--accent3)">3</div>
+        <div class="step-emoji">📖</div>
+        <h3>Follow Your Plan</h3>
+        <p>Study daily with structured sessions, Pomodoro timers, and smart reminders.</p>
+      </div>
+
+      <div class="step-card reveal">
+        <div class="step-num" style="background:var(--accent2)">4</div>
+        <div class="step-emoji">🏆</div>
+        <h3>Achieve & Excel</h3>
+        <p>Track your growth, celebrate milestones, and walk into your exam fully prepared.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PROGRESS TRACKER + POMODORO
+═══════════════════════════════════════════ -->
+<section id="tracker">
+  <div class="section-wrap">
+    <p class="section-label reveal">Dashboard</p>
+    <h2 class="section-title reveal">Track Your Progress</h2>
+    <p class="section-desc reveal">Stay on top of every subject and never miss a study day with your personal learning dashboard.</p>
+
+    <div class="tracker-layout">
+
+      <!-- LEFT COLUMN -->
+      <div>
+
+        <!-- Subject Progress -->
+        <div class="tracker-card reveal" style="margin-bottom:1.5rem">
+          <h3>📊 Subject Mastery</h3>
+          <div class="subject-progress">
+
+            <div class="progress-item">
+              <div class="progress-label"><span>Mathematics</span><span>78%</span></div>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" data-width="78"
+                  style="background:linear-gradient(90deg,#6C3DE8,#9B6DFF)"></div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-label"><span>Physics</span><span>62%</span></div>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" data-width="62"
+                  style="background:linear-gradient(90deg,#4ECDC4,#2ECC71)"></div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-label"><span>Chemistry</span><span>45%</span></div>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" data-width="45"
+                  style="background:linear-gradient(90deg,#FF8C42,#FFD93D)"></div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-label"><span>English</span><span>91%</span></div>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" data-width="91"
+                  style="background:linear-gradient(90deg,#FF6B6B,#FF8C42)"></div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-label"><span>History</span><span>55%</span></div>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" data-width="55"
+                  style="background:linear-gradient(90deg,#6BCB77,#4ECDC4)"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Streak Calendar -->
+        <div class="tracker-card reveal">
+          <h3>🔥 Study Streak — 12 Days</h3>
+          <div class="streak-box" id="streak-box"></div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div>
+
+        <!-- XP / Level -->
+        <div class="tracker-card reveal" style="margin-bottom:1.5rem">
+          <h3>⚡ Level Progress — Level 7</h3>
+          <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem">
+            1,340 / 2,000 XP to Level 8
+          </p>
+          <div class="xp-bar-wrap"><div class="xp-bar"></div></div>
+          <div class="xp-labels"><span>🏅 Level 7</span><span>Level 8 🚀</span></div>
+        </div>
+
+        <!-- Pomodoro Timer -->
+        <div class="pomodoro-wrap reveal">
+          <h3 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:0.5rem">
+            🍅 Pomodoro Timer
+          </h3>
+
+          <div class="timer-modes">
+            <button class="mode-btn active" onclick="setMode(25,'Focus')">Focus</button>
+            <button class="mode-btn"        onclick="setMode(5,'Short Break')">Short Break</button>
+            <button class="mode-btn"        onclick="setMode(15,'Long Break')">Long Break</button>
+          </div>
+
+          <div class="timer-label" id="timer-label">FOCUS TIME</div>
+          <div class="timer-display" id="timer-display">25:00</div>
+
+          <div class="timer-btns">
+            <button class="timer-btn start" id="timer-start-btn" onclick="toggleTimer()">▶ Start</button>
+            <button class="timer-btn reset" onclick="resetTimer()">↺ Reset</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STUDY TIPS
+═══════════════════════════════════════════ -->
+<section id="tips">
+  <div class="section-wrap">
+    <p class="section-label reveal">Science-Backed</p>
+    <h2 class="section-title reveal">Top Study Techniques</h2>
+    <p class="section-desc reveal">Use methods proven by cognitive science to retain more information in less time.</p>
+
+    <div class="tips-grid">
+
+      <div class="tip-card t1 reveal">
+        <div class="tip-emoji">🔁</div>
+        <h3>Spaced Repetition</h3>
+        <p>Review material at increasing intervals. Leverages the forgetting curve to lock knowledge into long-term memory.</p>
+      </div>
+
+      <div class="tip-card t2 reveal">
+        <div class="tip-emoji">🧪</div>
+        <h3>Active Recall</h3>
+        <p>Test yourself instead of re-reading. Retrieving information strengthens neural pathways far better than passive review.</p>
+      </div>
+
+      <div class="tip-card t3 reveal">
+        <div class="tip-emoji">🍅</div>
+        <h3>Pomodoro Technique</h3>
+        <p>Study in 25-minute focused blocks followed by 5-minute breaks. Prevents burnout and maintains peak concentration.</p>
+      </div>
+
+      <div class="tip-card t4 reveal">
+        <div class="tip-emoji">🗺️</div>
+        <h3>Mind Mapping</h3>
+        <p>Connect ideas visually to understand relationships between concepts. Great for complex subjects and holistic learners.</p>
+      </div>
+
+      <div class="tip-card t1 reveal">
+        <div class="tip-emoji">✍️</div>
+        <h3>The Feynman Technique</h3>
+        <p>Explain any concept in simple terms as if teaching a child. Gaps in your explanation reveal what you still need to learn.</p>
+      </div>
+
+      <div class="tip-card t2 reveal">
+        <div class="tip-emoji">😴</div>
+        <h3>Sleep & Memory</h3>
+        <p>Your brain consolidates memories during sleep. Studying before bedtime and getting 7–8 hours maximizes retention.</p>
+      </div>
+
+      <div class="tip-card t3 reveal">
+        <div class="tip-emoji">🎯</div>
+        <h3>Interleaving Practice</h3>
+        <p>Mix different subjects or problem types in one session. Harder but builds more flexible and robust understanding.</p>
+      </div>
+
+      <div class="tip-card t4 reveal">
+        <div class="tip-emoji">📝</div>
+        <h3>Elaborative Interrogation</h3>
+        <p>Ask yourself "why" and "how" about the material. Deep processing leads to far superior memory formation.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════ -->
+<section id="testimonials">
+  <div class="section-wrap">
+    <p class="section-label reveal">Students Love Us</p>
+    <h2 class="section-title reveal">Real Results, Real Students</h2>
+
+    <div class="testi-grid">
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"StudyMind completely changed how I prepare for exams. I went from barely passing to scoring in the top 5% of my class!"</p>
+        <div class="testi-user">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#6C3DE8,#4ECDC4)">AK</div>
+          <div>
+            <div class="testi-name">Arjun Kumar</div>
+            <div class="testi-role">Engineering Student, IIT</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The AI plan adapted when I fell behind schedule. It's like having a personal tutor who always knows exactly what you need next."</p>
+        <div class="testi-user">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#FF6B6B,#FF8C42)">PR</div>
+          <div>
+            <div class="testi-name">Priya Rao</div>
+            <div class="testi-role">Medical Student, MBBS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The Pomodoro timer and streak system made studying feel like a game. I haven't missed a single study day in 3 months!"</p>
+        <div class="testi-user">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#FFD93D,#6BCB77)">SM</div>
+          <div>
+            <div class="testi-name">Sneha Mehta</div>
+            <div class="testi-role">CA Aspirant, Mumbai</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CALL TO ACTION
+═══════════════════════════════════════════ -->
+<section id="cta">
+  <div class="section-wrap">
+    <div class="cta-wrap reveal">
+      <h2>Ready to Transform Your Studies?</h2>
+      <p>Join 50,000+ students who are studying smarter with AI. Start free today — no credit card needed.</p>
+      <button class="btn-primary"
+        style="font-size:1.1rem;padding:1rem 2.5rem"
+        onclick="scrollTo('planner')">
+        🚀 Generate Your Free Plan
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-logo">StudyMind AI</div>
+  <div class="footer-links">
+    <a href="#">About</a>
+    <a href="#">Features</a>
+    <a href="#">Pricing</a>
+    <a href="#">Blog</a>
+    <a href="#">Privacy</a>
+    <a href="#">Contact</a>
+  </div>
+  <p>© 2025 StudyMind AI. Crafted with ❤️ for curious minds everywhere.</p>
+</footer>
+
+<!-- 🔧 All JavaScript in script.js -->
+<script src="script.js"></script>
+</body>
+</html>
